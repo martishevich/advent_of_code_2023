@@ -31,15 +31,15 @@ func main() {
 
 func solve(reader io.Reader) int {
 	replaceArr := []ReplaceStruct{
-		{"one", "1"},
-		{"two", "2"},
-		{"three", "3"},
-		{"four", "4"},
-		{"five", "5"},
-		{"six", "6"},
-		{"seven", "7"},
-		{"eight", "8"},
-		{"nine", "9"},
+		{"one", "o1e"},
+		{"two", "t2o"},
+		{"three", "t3e"},
+		{"four", "f4r"},
+		{"five", "f5e"},
+		{"six", "s6x"},
+		{"seven", "s7n"},
+		{"eight", "e8t"},
+		{"nine", "n9e"},
 	}
 
 	var sum int = 0
@@ -48,7 +48,9 @@ func solve(reader io.Reader) int {
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		fmt.Println("line before: ", line)
+		// fmt.Println("line before: ", line)
+		// lineBefore := line
+
 		for {
 			minIndex, indexArr := getMinOccurance(line, replaceArr)
 
@@ -59,7 +61,7 @@ func solve(reader io.Reader) int {
 			line = strings.Replace(line, replaceArr[indexArr].StringToReplace, replaceArr[indexArr].IntegerForReplacing, 1)
 		}
 
-		fmt.Println("line after: ", line)
+		// fmt.Println("line after: ", line)
 
 		var firstFound = false
 		var firstInt int
@@ -103,6 +105,8 @@ func solve(reader io.Reader) int {
 		if lastFound == false {
 			lastInt = firstInt
 		}
+
+		// fmt.Println("lineBefore: ", lineBefore, " line: ", line, " | first: ", firstInt, " | last: ", lastInt)
 
 		lineResult := firstInt*10 + lastInt
 		sum = sum + lineResult
