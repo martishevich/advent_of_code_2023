@@ -26,3 +26,6 @@ jobs:
 
       - name: Test solutions day02p2
         run: cd day02p2 && go test -cover
+
+      - name: Test solutions day03p1
+        run: cd day03p1 && go test -cover
