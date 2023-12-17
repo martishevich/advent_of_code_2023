@@ -17,7 +17,7 @@ func Test_Simple(t *testing.T) {
 
 	sum := solve(file)
 
-	if sum != 142 {
-		t.Error("incorrect sym: excpected 142 but got ", sum)
+	if sum != 8 {
+		t.Error("incorrect sum: excpected 8 but got ", sum)
 	}
 }
